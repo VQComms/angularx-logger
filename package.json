@@ -1,6 +1,6 @@
 {
   "name": "angularx-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angularx-logger, a simple to use logger for all your logging needs!",
   "main": "angularx-logger.js",
   "jsnext:main": "angularx-logger.module.js",
@@ -13,7 +13,9 @@
     "build:aot": "ngc",
     "build": "rimraf build && npm run build:esm && npm run build:bundle && npm run build:aot",
     "copy": "cp package.json dist && cp README.md dist",
-    "release": "rimraf dist && npm run build && npm run copy"
+    "release": "rimraf dist && npm run build && npm run copy",
+    "pack-lib": "npm pack ./dist",
+    "publish-lib": "npm publish --verbose ./dist"
   },
   "license": "MIT",
   "keywords": [
