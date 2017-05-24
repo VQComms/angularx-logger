@@ -1,10 +1,10 @@
 {
   "name": "angularx-logger",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "Angularx-logger, a simple to use logger for all your logging needs!",
   "main": "angularx-logger.js",
   "jsnext:main": "angularx-logger.module.js",
-  "module": "angularx-logger.module.js",
+  "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "tslint": "tslint \"src/**/*.ts\"",
@@ -77,5 +77,8 @@
     "postcss-loader": "^2.0.5",
     "sass-loader": "^6.0.5",
     "to-string-loader": "^1.1.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
