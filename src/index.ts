@@ -1,1 +1,1 @@
-export * from './angularx-logger.module'
+export * from './angularx-logger.module';

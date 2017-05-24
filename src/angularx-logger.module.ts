@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core'
-import {CommonModule} from '@angular/common'
-import { AngularXLoggerComponent } from './angularx-logger.component'
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AngularXLoggerComponent } from './angularx-logger.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [AngularXLoggerComponent],
-  exports: [AngularXLoggerComponent]
+  imports: [ CommonModule ],
+  declarations: [ AngularXLoggerComponent ],
+  exports: [ AngularXLoggerComponent ]
 })
-export class AngularXLoggerModule {}
+export class AngularXLoggerModule { }
