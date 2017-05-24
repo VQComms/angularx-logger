@@ -58,8 +58,6 @@ And you're ready to go!
 * Multiple "targets" and custom "targets"
 * Keep up to date
 * Tests
-* Demo project
-* CHANGELOG / Releases
 
 
 ## Scripts
