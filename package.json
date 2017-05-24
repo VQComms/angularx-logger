@@ -1,10 +1,10 @@
 {
-  "name": "angular-lib-starter",
+  "name": "angularx-logger",
   "version": "0.0.1",
-  "description": "Starter to make Angular libs",
-  "main": "bundle.js",
-  "jsnext:main": "lib.module.js",
-  "module": "lib.module.js",
+  "description": "Angularx-logger, a simple to use logger for all your logging needs!",
+  "main": "angularx-logger.js",
+  "jsnext:main": "angularx-logger.module.js",
+  "module": "angularx-logger.module.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "rimraf ./tmp/mocha-webpack && mocha-webpack --opts 'mocha.opts'",
@@ -13,7 +13,7 @@
     "build:aot": "ngc",
     "build": "rimraf build && npm run build:esm && npm run build:bundle && npm run build:aot",
     "copy": "cp package.json dist && cp README.md dist",
-    "release": "npm run build && npm run copy"
+    "release": "rimraf dist && npm run build && npm run copy"
   },
   "license": "MIT",
   "devDependencies": {
