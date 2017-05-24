@@ -1,24 +1,18 @@
-# Angular Lib Starter
-> Universal, AOT, Web Worker ready lib starter. Use for your Angular libs
-
+# Angularx-logger
+> Logging for your Angular project
 
 ## Getting started
-* fork this
-* clear the git history `git init .`
-* add your source code in `src`.
-* change the entry in `webpack.config.js`
-* change the output filnames in `package.json` to match your src files and webpack
-  * `"main", "jsnext:main", "module", "types"`
-* build your project `yarn release` or `npm run release`
 
-## Builds
-This starter prepares 2 different types of builds of your lib
-* **esm** or ES2015 Modules
-  * this build is a transpilation of your Typescript code to ES5 and ES2015 modules. Its' not bundled. This is needed for treeshaking when users use your lib
-* **UMD**
-  * this is a bundle of ES5 code. What you would typically get from webpack or rollup.
+TODO, once published to NPM.
 
-The build system generates AOT metadata too, so you're good.
+## Future goals
+
+* Global "prefix" to all log messages
+* Component level "prefixes" to all log messages
+* Multiple "targets" and custom "targets"
+* Keep up to date
+* Tests
+* Demo project
 
 
 ## Scripts
