@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 1.1.1 (2017-05-30)
+
+Fixed logical mistake in debug protection on older browsers.
+Improved README for `.forRoot(opts: {})`
+
 ## Version 1.1.0 (2017-05-30)
 
 Added `LoggerOptions` to package. You can now set `enable` (boolean) and `globalPrefix` (string) so you can control the logger more.

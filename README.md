@@ -24,7 +24,7 @@ import { NgModule }         from '@angular/core';
 import { AngularXLoggerModule } from 'angularx-logger';
  
 @NgModule({
-    imports:      [ AngularXLoggerModule ]
+    imports: [ AngularXLoggerModule.forRoot() ]
 })
 export class MyAwesomeAppModule { } 
 ```
@@ -51,9 +51,19 @@ export class MyAwesomeComponent {
 
 And you're ready to go!
 
+## Options
+
+To use options, pass a `LoggerOptions` object to `forRoot` like:
+
+```
+AngularXLoggerModule.forRoot({ enabled: true, globalPrefix: 'Awesome App =>})
+```
+
+`enabled` turn on or off the logger
+`globalPrefix` adds a global prefix to each logged message, helpful for separating your logging from everyone elses!
+
 ## Future goals
 
-* Global "prefix" to all log messages
 * Component level "prefixes" to all log messages
 * Multiple "targets" and custom "targets"
 * Keep up to date

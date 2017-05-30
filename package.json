@@ -1,6 +1,6 @@
 {
   "name": "angularx-logger",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Angularx-logger, a simple to use logger for all your logging needs!",
   "main": "angularx-logger.js",
   "jsnext:main": "angularx-logger.module.js",
