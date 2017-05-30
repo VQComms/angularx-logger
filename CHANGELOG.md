@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 1.1.2 (2017-05-30)
+
+Simplified logging logic using spread operator also leading to better formatting of optional parameters.
+
 ## Version 1.1.1 (2017-05-30)
 
 Fixed logical mistake in debug protection on older browsers.
