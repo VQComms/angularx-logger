@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AngularXLoggerModule } from 'angularx-logger';
+import { AngularXLoggerModule, LoggerOptions } from 'angularx-logger';
 
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 
+let loggerOptions: LoggerOptions = { enable: true, globalPrefix: 'DEMO =>' };
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { DemoComponent } from './demo/demo.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularXLoggerModule.forRoot()
+    AngularXLoggerModule.forRoot(loggerOptions)
   ],
   providers: [
   ],
