@@ -73,7 +73,11 @@ export class Logger implements ILogger {
 
     constructor( @Inject(LoggerOptions) private loggerOptions: LoggerOptions) {
         // TODO: Starting work on letting user choose a different target
-        this.logger = new ConsoleLogger();
+        if (!this.loggerOptions.enable) {
+            this.logger = new DevNullLogger();
+        } else {
+            this.logger = new ConsoleLogger();
+        }
     }
 
     public error(message?: any, ...optionalParams: any[]) {
