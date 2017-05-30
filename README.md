@@ -56,7 +56,7 @@ And you're ready to go!
 To use options, pass a `LoggerOptions` object to `forRoot` like:
 
 ```
-AngularXLoggerModule.forRoot({ enabled: true, globalPrefix: 'Awesome App =>})
+AngularXLoggerModule.forRoot({ enabled: true, globalPrefix: 'Awesome App =>' })
 ```
 
 `enabled` turn on or off the logger
