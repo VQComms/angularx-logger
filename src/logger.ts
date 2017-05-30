@@ -51,9 +51,9 @@ export class ConsoleLogger implements ILogger {
     public debug(message?: any, ...optionalParams: any[]) {
         // Deal with some browsers not having debug, IE
         if (console['debug'] === undefined) {
-            console.debug.apply(console, arguments);
-        } else {
             console.log.apply(console, arguments);
+        } else {
+            console.debug.apply(console, arguments);
         }
     }
 
