@@ -22,6 +22,14 @@ export class DemoComponent implements OnInit, OnDestroy {
     this.logger.debug('You are kind of awesome');
   }
 
+  public debugObject(): void {
+    this.logger.debug('You are kind of awesome', { whoami: 'you', awesomeness: 9001, isAwesome: true });
+  }
+
+  public debugArray(): void {
+    this.logger.debug('You are kind of awesome', [ 9001, 1337, 7, 3, 2 ]);
+  }
+
   public info(): void {
     this.logger.info('You are awesome');
   }

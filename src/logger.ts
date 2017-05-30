@@ -83,51 +83,31 @@ export class Logger implements ILogger {
     public error(message?: any, ...optionalParams: any[]) {
         message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (optionalParams && optionalParams.length > 0) {
-            this.logger.error(message, optionalParams);
-        } else {
-            this.logger.error(message);
-        }
+        this.logger.error(message, ...optionalParams);
     }
 
     public warn(message?: any, ...optionalParams: any[]) {
         message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (optionalParams && optionalParams.length > 0) {
-            this.logger.warn(message, optionalParams);
-        } else {
-            this.logger.warn(message);
-        }
+        this.logger.warn(message, ...optionalParams);
     }
 
     public info(message?: any, ...optionalParams: any[]) {
         message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (optionalParams && optionalParams.length > 0) {
-            this.logger.info(message, optionalParams);
-        } else {
-            this.logger.info(message);
-        }
+        this.logger.info(message, ...optionalParams);
     }
 
     public debug(message?: any, ...optionalParams: any[]) {
         message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (optionalParams && optionalParams.length > 0) {
-            this.logger.debug(message, optionalParams);
-        } else {
-            this.logger.debug(message);
-        }
+        this.logger.debug(message, ...optionalParams);
     }
 
     public log(message?: any, ...optionalParams: any[]) {
         message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (optionalParams && optionalParams.length > 0) {
-            this.logger.log(message, optionalParams);
-        } else {
-            this.logger.log(message);
-        }
+        this.logger.log(message, ...optionalParams);
     }
 
 }
