@@ -1,65 +1,129 @@
-/*!
- * Copyright 2017 VQ Communications Ltd All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/vqcomms/angularx-logger/blob/master/LICENSE
- */
-
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { LoggerOptions } from './logger-options';
 
 export interface ILogger {
-    error: (message?: any, ...optionalParams: any[]) => { };
+    error(message?: any, ...optionalParams: any[]);
 
-    warn: (message?: any, ...optionalParams: any[]) => { };
+    warn(message?: any, ...optionalParams: any[]);
 
-    info: (message?: any, ...optionalParams: any[]) => { };
+    info(message?: any, ...optionalParams: any[]);
 
-    debug: (message?: any, ...optionalParams: any[]) => { };
+    debug(message?: any, ...optionalParams: any[]);
 
-    log: (message?: any, ...optionalParams: any[]) => { };
+    log(message?: any, ...optionalParams: any[]);
 }
+
+export class DevNullLogger implements ILogger {
+    public error(message?: any, ...optionalParams: any[]) {
+        // Void
+    }
+
+    public warn(message?: any, ...optionalParams: any[]) {
+        // Void
+    }
+
+    public info(message?: any, ...optionalParams: any[]) {
+        // Void
+    }
+
+    public debug(message?: any, ...optionalParams: any[]) {
+        // Void
+    }
+
+    public log(message?: any, ...optionalParams: any[]) {
+        // Void
+    }
+}
+
+export class ConsoleLogger implements ILogger {
+    public error(message?: any, ...optionalParams: any[]) {
+        console.error.apply(console, arguments);
+    }
+
+    public warn(message?: any, ...optionalParams: any[]) {
+        console.warn.apply(console, arguments);
+    }
+
+    public info(message?: any, ...optionalParams: any[]) {
+        console.info.apply(console, arguments);
+    }
+
+    public debug(message?: any, ...optionalParams: any[]) {
+        // Deal with some browsers not having debug, IE
+        if (console['debug'] === undefined) {
+            console.debug.apply(console, arguments);
+        } else {
+            console.log.apply(console, arguments);
+        }
+    }
+
+    public log(message?: any, ...optionalParams: any[]) {
+        console.log.apply(console, arguments);
+    }
+}
+
+// Target ideas:
+// Alert?
+// HTML Element?
 
 @Injectable()
 export class Logger implements ILogger {
 
-    public error: (message?: any, ...optionalParams: any[]) => { };
+    private logger: ILogger;
 
-    public warn: (message?: any, ...optionalParams: any[]) => { };
-
-    public info: (message?: any, ...optionalParams: any[]) => { };
-
-    public debug: (message?: any, ...optionalParams: any[]) => { };
-
-    public log: (message?: any, ...optionalParams: any[]) => { };
-
-    constructor() {
-        this.bind();
+    constructor( @Inject(LoggerOptions) private loggerOptions: LoggerOptions) {
+        // TODO: Starting work on letting user choose a different target
+        this.logger = new ConsoleLogger();
     }
 
-    private bind(): void {
-        // No console? Let's do nothing.
-        if (!console) {
-            return;
-        }
+    public error(message?: any, ...optionalParams: any[]) {
+        message = this.loggerOptions.globalPrefix + ' ' + message;
 
-        if (console.error) {
-            this.error = console.error.bind(console);
-        }
-
-        if (console.warn) {
-            this.warn = console.warn.bind(console);
-        }
-
-        if (console.info) {
-            this.info = console.info.bind(console);
-        }
-
-        if (console.debug) {
-            this.debug = console.debug.bind(console);
-        }
-
-        if (console.log) {
-            this.log = console.log.bind(console);
+        if (optionalParams && optionalParams.length > 0) {
+            this.logger.error(message, optionalParams);
+        } else {
+            this.logger.error(message);
         }
     }
+
+    public warn(message?: any, ...optionalParams: any[]) {
+        message = this.loggerOptions.globalPrefix + ' ' + message;
+
+        if (optionalParams && optionalParams.length > 0) {
+            this.logger.warn(message, optionalParams);
+        } else {
+            this.logger.warn(message);
+        }
+    }
+
+    public info(message?: any, ...optionalParams: any[]) {
+        message = this.loggerOptions.globalPrefix + ' ' + message;
+
+        if (optionalParams && optionalParams.length > 0) {
+            this.logger.info(message, optionalParams);
+        } else {
+            this.logger.info(message);
+        }
+    }
+
+    public debug(message?: any, ...optionalParams: any[]) {
+        message = this.loggerOptions.globalPrefix + ' ' + message;
+
+        if (optionalParams && optionalParams.length > 0) {
+            this.logger.debug(message, optionalParams);
+        } else {
+            this.logger.debug(message);
+        }
+    }
+
+    public log(message?: any, ...optionalParams: any[]) {
+        message = this.loggerOptions.globalPrefix + ' ' + message;
+
+        if (optionalParams && optionalParams.length > 0) {
+            this.logger.log(message, optionalParams);
+        } else {
+            this.logger.log(message);
+        }
+    }
+
 }
