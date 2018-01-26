@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 2.0.0 (2018-01-26)
+
+* Reworked to use angular-library-starter https://github.com/robisim74/angular-library-starter
+* Upgraded for Angular 5
+
 ## Version 1.1.2 (2017-05-30)
 
 Simplified logging logic using spread operator also leading to better formatting of optional parameters.
