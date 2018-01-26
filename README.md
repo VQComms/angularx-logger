@@ -71,12 +71,12 @@ AngularXLoggerModule.forRoot({ enabled: true, globalPrefix: 'Awesome App =>' })
 
 
 ## Scripts
-* `"test"`: runs the test in mocha on node
-* `"build:esm"`: builds the esm versions
-* `"build:bundle"`: builds the UMD version
-* `"build:aot"`: makes it work for aot
-* `"build"`: does all the above
-* `"copy"`: copies over file to dist
-* `"release"`: does all the above
-* `"pack-lib"`: does the packaging for npm
-* `"publish-lib`: publishes to npm
+* `"test"`: runs the tests
+* `"build"`: builds
+* `"publish:lib`: publishes to npm
+
+## Using Angular-Library-Starter
+
+This project uses this starter project:
+
+https://github.com/robisim74/angular-library-starter

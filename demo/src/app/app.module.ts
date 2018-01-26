@@ -8,7 +8,7 @@ import { AngularXLoggerModule, LoggerOptions } from 'angularx-logger';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 
-let loggerOptions: LoggerOptions = { enable: true, globalPrefix: 'DEMO =>' };
+const loggerOptions: LoggerOptions = { enable: true, globalPrefix: 'DEMO =>' };
 @NgModule({
   declarations: [
     AppComponent,

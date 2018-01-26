@@ -1,47 +1,25 @@
 {
-  /*
-   * Possible values:
-   * - the name of a built-in config
-   * - the name of an NPM module which has a "main" file that exports a config object
-   * - a relative path to a JSON file
-   */
-  "extends": "tslint:recommended",
-  "rules": {
-    /*
-     * Any rules specified here will override those from the base config we are extending.
-     */
-    "curly": true,
-
-    // Only single quotes unless to avoid escaping
-    "quotemark": [true, "single", "avoid-escape"],
-
-    // Allow console log and error
-    "no-console": [true, "debug", "warn", "info"],
-
-    // Allow require for awkward libs
-    "no-var-requires": false,
-
-    // Because I'm not that OCD
-    "object-literal-sort-keys": false,
-
-    "ordered-imports": [false],
-
-    // Helpful as some untyped stuff will throw
-    "no-string-literal": false,
-
-    // Not sure I understand the movement around this, to me it's a compiler error
-    "trailing-comma": [false],
-
-    // It's helpful to have multiple per file, especially with page objects
-    "max-classes-per-file": [false],
-
-    // Old school 120 isn't needed with larger monitors!
-    "max-line-length": [false]
-  },
-  "jsRules": {
-    /*
-     * Any rules specified here will override those from the base config we are extending.
-     */
-    "curly": true
-  }
+    "extends": [
+        "tslint-angular"
+    ],
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            [
+                "dir-prefix1",
+                "dir-prefix2"
+            ],
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            [
+                "cmp-prefix1",
+                "cmp-prefix2"
+            ],
+            "kebab-case"
+        ]
+    }
 }

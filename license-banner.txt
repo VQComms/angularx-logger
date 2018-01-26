@@ -1,0 +1,4 @@
+/**
+ * @license angularx-logger
+ * MIT license
+*/
