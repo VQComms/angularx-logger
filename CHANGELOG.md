@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 3.0.0 (2018-05-14)
+
+Updated for Angular 6 support.
+
 ## Version 2.0.0 (2018-01-26)
 
 * Reworked to use angular-library-starter https://github.com/robisim74/angular-library-starter
